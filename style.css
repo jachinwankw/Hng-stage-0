@@ -1,0 +1,151 @@
+:root {
+    --primary: #4c51bf;
+    --danger: #e53e3e;
+    --bg: #f7fafc;
+    --text: #2d3748;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.todo-card {
+    background: white;
+    width: 100%;
+    max-width: 450px;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    border-left: 6px solid var(--primary);
+}
+
+.checkbox-container {
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+}
+
+.checkbox-container input {
+    position: absolute;
+    opacity: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 22px;
+    width: 22px;
+    background-color: #edf2f7;
+    border: 2px solid #cbd5e0;
+    border-radius: 6px;
+    transition: 0.2s;
+}
+
+/* Enhanced Focus for Accessibility */
+input:focus-visible ~ .checkmark {
+    outline: 3px solid var(--primary);
+    outline-offset: 3px;
+    box-shadow: 0 0 0 5px rgba(76, 81, 191, 0.2);
+}
+
+input:checked ~ .checkmark {
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+
+.is-done h2 {
+    text-decoration: line-through;
+    color: #a0aec0;
+}
+
+/* --- Layout Helpers --- */
+.card-header { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    margin-bottom: 15px; 
+}
+
+.title-section { 
+    display: flex; 
+    align-items: center; 
+    gap: 10px; 
+}
+
+.description { 
+    font-size: 0.95rem; 
+    line-height: 1.5; 
+    color: #4a5568; 
+    margin-bottom: 20px; 
+}
+
+.metadata { 
+    display: flex; 
+    gap: 10px; 
+    margin-bottom: 20px; 
+}
+
+.badge { 
+    font-size: 0.75rem; 
+    font-weight: bold; 
+    padding: 4px 10px; 
+    border-radius: 20px; 
+    background: #ebf4ff; 
+    color: var(--primary); 
+}
+
+.deadline-section { 
+    background: #f8fafc; 
+    padding: 12px; 
+    border-radius: 8px; 
+    margin-bottom: 20px; 
+    font-size: 0.9rem; 
+}
+
+.date-row { 
+    display: flex; 
+    justify-content: space-between; 
+    margin-bottom: 5px; 
+}
+
+.tags { 
+    display: flex; 
+    gap: 8px; 
+}
+
+.tag { 
+    font-size: 0.75rem; 
+    background: #edf2f7; 
+    padding: 3px 8px; 
+    border-radius: 4px; 
+}
+
+/* --- Buttons & Accessibility Fix --- */
+button { 
+    cursor: pointer; 
+    border: 1px solid #cbd5e0; 
+    background: white; 
+    padding: 5px 10px; 
+    border-radius: 6px; 
+    font-size: 0.8rem; 
+    transition: all 0.2s ease;
+}
+
+button:hover {
+    background-color: #f7fafc;
+    border-color: var(--primary);
+}
+
+/* This fixes the highlight issue for HNG Stage 0 */
+button:focus-visible {
+    outline: 3px solid var(--primary);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 4px rgba(76, 81, 191, 0.3);
+}
